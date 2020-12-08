@@ -1,0 +1,66 @@
+[
+	{
+		"type": "animal",
+		"description": "name of an animal"
+	},
+	{
+		"type": "animal_plural",
+		"description": "plural of an animal"
+	},
+	{
+		"type": "body",
+		"description": "name of a part of the human body"
+	},
+	{
+		"type": "body_plural",
+		"description": "plural of a part of the human body"
+	},
+	{
+		"type": "food",
+		"description": "type of food"
+	},
+	{
+		"type": "food_plural",
+		"description": "plural of a type of food"
+	},
+	{
+		"type": "jj",
+		"description": "adjective"
+	},
+	{
+		"type": "liquid",
+		"description": "type of liquid"
+	},
+	{
+		"type": "nn",
+		"description": "noun"
+	},
+	{
+		"type": "nns",
+		"description": "plural noun"
+	},
+	{
+		"type": "rb",
+		"description": "adverb"
+	},
+	{
+		"type": "vb",
+		"description": "verb, base form"
+	},
+	{
+		"type": "vbd",
+		"description": "verb, past tense"
+	},
+	{
+		"type": "vbg",
+		"description": "verb gerund or present participle (i.e. verb ending in \"ing\")"
+	},
+	{
+		"type": "vbn",
+		"description": "verb, past participle"
+	},
+	{
+		"type": "vbz",
+		"description": "verb, 3rd person singular present (i.e. verb ending in \"s\")"
+	}
+]
