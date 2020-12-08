@@ -29,7 +29,7 @@
     title = madLibs[index].title;
 
     function formatLib(text) {
-      const wrds = text.split(/[ ,."]+/),
+      const wrds = text.split(/([ ,."]+)/),
         formattedWrds = [];
 
       wrds.forEach((d, i) => {
