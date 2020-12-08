@@ -19,14 +19,14 @@
       formattedPrompts.push(`<::${d.type}/>`);
     });
 
-    index = random(0, madLibs.length - 1);
+    index = random(0, madLibs.length);
     lib = formatLib(madLibs[index].text);
     libPrompts = getPrompts(lib);
 
     title = madLibs[index].title;
 
     function formatLib(text) {
-      const wrds = text.split(" "),
+      const wrds = text.split(/[ ,."]+/),
         formattedWrds = [];
 
       wrds.forEach((d, i) => {
@@ -75,6 +75,17 @@
       currentInput += 1;
       currentPromptIndex = libPrompts[currentInput] ? libPrompts[currentInput].index : currentPromptIndex;
     }
+
+    lib = findVowels(lib);
+  }
+
+  function findVowels(wrds) {
+    wrds.forEach((d, i) => {
+      d.text = d.text === "a/an" ? aVsAn(wrds[i + 1].value || "sam") : d.text;
+      if (d.text === "a/an") console.log(d.text)
+    })
+
+    return wrds;
   }
 
 </script>
@@ -211,6 +222,7 @@
     min-width: 64px;
     border-bottom: 2px solid red;
     transition: 250ms;
+    font-weight: bold;
   }
 
   .prompt.isactive {
@@ -301,7 +313,6 @@
   }
 
   .inner {
-    /* opacity: 0; */
     white-space: nowrap;
   }
 </style>
