@@ -1,8 +1,8 @@
 :root {
-	--sans: "National 2 Web", Helvetica, Arial, sans-serif;
-	--serif: "Tiempos Text Web", Georgia, Times, serif;
-	--mono: Menlo, Consolas, Monaco, "Courier New", monospace;
-	
+	--sans: "Inter", Helvetica, Arial, sans-serif;
+	/* --serif: "Tiempos Text Web", Georgia, Times, serif; */
+	/* --mono: Menlo, Consolas, Monaco, "Courier New", monospace; */
+
 	--z-bottom: -100;
   --z-middle: 0;
   --z-top: 100;
@@ -29,7 +29,7 @@
 
 	/* water.css */
 
-	--body-font: var(--serif);
+	--body-font: var(--sans);
 	--background-body: var(--white);
   --background: var(--off-white);
   --background-alt: var(--off-white);
@@ -62,15 +62,4 @@
 	height: auto;
 	padding: 0.5em;
 	z-index: 1000;
-}
-
-/* pudding */
-.wordmark svg path {
-	fill: currentColor;
-}
-
-/* demo */
-#demo svg {
-	width: 1em;
-	vertical-align: middle;
 }
