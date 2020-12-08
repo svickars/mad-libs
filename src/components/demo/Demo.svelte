@@ -6,11 +6,13 @@
   import Icon from "../helpers/Icon.svelte";
   import prompts from "../../data/prompts.json";
   import madLibs from "../../data/madLibs.json";
+  import examples from "../../data/examples.json";
 
   let index, lib, libPrompts, title;
 
   let currentInput = 0,
-    currentPromptIndex = 0;
+    currentPromptIndex = 0,
+    exampleIndex = 0;
 
   async function getLib() {
     let formattedPrompts = [];
@@ -20,6 +22,7 @@
     });
 
     index = random(0, madLibs.length);
+    exampleIndex = random(0, 3);
     lib = formatLib(madLibs[index].text);
     libPrompts = getPrompts(lib);
 
@@ -77,6 +80,7 @@
     }
 
     lib = findVowels(lib);
+    exampleIndex = random(0, 3);
   }
 
   function findVowels(wrds) {
@@ -111,7 +115,7 @@
           <p>Okay, now {prompt.lead} {prompt.desc}</p>
         {/if}
         <form on:submit|preventDefault={handleEnter}>
-          <input bind:value={lib[prompt.index].value} placeholder={prompt.type} type="text" class={prompt.type} />
+          <input bind:value={lib[prompt.index].value} placeholder={examples[prompt.type][exampleIndex]} type="text" class={prompt.type} />
         </form>
       </div>
     {/each}

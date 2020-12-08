@@ -1,0 +1,18 @@
+{
+	"animal": ["cow", "dog", "gorilla"],
+	"animal_plural": ["chimpanzees", "tigers", "peacocks"],
+	"body": ["finger", "ear", "nostril"],
+	"body_plural": ["toes", "lungs", "fingernails"],
+	"food": ["big mac", "pizza pocket", "apple"],
+	"food_plural": ["protein bars", "bananas", "salads"],
+	"jj": ["marvelous", "angry", "joyous"],
+	"liquid": ["red wine", "rainwater", "milk"],
+	"nn": ["computer mouse", "housekey", "throne"],
+	"nns": ["couches", "pizza parlours", "teammates"],
+	"rb": ["quickly", "serendipitously", "happily"],
+	"vb": ["run", "gawk", "stare"],
+	"vbd": ["saw", "drove", "climbed"],
+	"vbg": ["shepherding", "sleeping", "sitting"],
+	"vbn": ["broken", "ruined", "swollen"],
+	"vbz": ["sings", "watches", "buzzes"]
+}
