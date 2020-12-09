@@ -74,6 +74,11 @@
   let promise = getLib();
 
   const handleEnter = () => {
+
+    if (!document.getElementById(`prompt-input-${currentInput}`).getElementsByTagName("input")[0].value) {
+      lib[libPrompts[currentInput].index].value = examples[libPrompts[currentInput].type][exampleIndex];
+    }
+
     if (currentInput < libPrompts.length) {
       currentInput += 1;
       currentPromptIndex = libPrompts[currentInput] ? libPrompts[currentInput].index : currentPromptIndex;
@@ -86,7 +91,6 @@
   function findVowels(wrds) {
     wrds.forEach((d, i) => {
       d.text = d.text === "a/an" ? aVsAn(wrds[i + 1].value || "sam") : d.text;
-      if (d.text === "a/an") console.log(d.text)
     })
 
     return wrds;
@@ -96,7 +100,8 @@
 
 <section id="demo">
   <div>
-    <h1>Mad Libs</h1>
+    <h1>Let&rsquo;s play mad libs!</h1>
+    <p><Icon name="help-circle" /> Follow the prompts and enter an appropriate word (or use the example) to form a story.</p>
   </div>
 
   {#await promise}
@@ -115,7 +120,7 @@
           <p>Okay, now {prompt.lead} {prompt.desc}</p>
         {/if}
         <form on:submit|preventDefault={handleEnter}>
-          <input bind:value={lib[prompt.index].value} placeholder={examples[prompt.type][exampleIndex]} type="text" class={prompt.type} />
+          <input bind:value={lib[prompt.index].value} placeholder="like {examples[prompt.type][exampleIndex]}..." type="text" class={prompt.type} />
         </form>
       </div>
     {/each}
@@ -144,7 +149,7 @@
   {/await}
 
   <div>
-    <p>Using the Pudding's <a href="https://github.com/the-pudding/svelte-starter">starter template</a> for Svelte <Icon name="feather" /> and Microsoft's <a href="https://www.microsoft.com/en-us/download/details.aspx?id=55593">Dataset for Fill-in-the-Blank Humor</a>.</p>
+    <p>Made by <a href="http://samvickars.com">Sam</a>, using the Pudding&rsquo;s <a href="https://github.com/the-pudding/svelte-starter">Svelte starter</a> and Microsoft's <a href="https://www.microsoft.com/en-us/download/details.aspx?id=55593">Dataset for Fill-in-the-Blank Humor</a>.</p>
   </div>
 </section>
 
@@ -227,6 +232,7 @@
     border-bottom: 2px solid red;
     transition: 250ms;
     font-weight: bold;
+    color: #121212 !important;
   }
 
   .prompt.isactive {
